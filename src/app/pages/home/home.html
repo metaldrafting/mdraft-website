@@ -1,0 +1,413 @@
+<section id="home" class="hero-wrap container-fluid">
+    <div class="row h-100 align-items-center">
+        <div class="col-sm-12 p-0">
+           <div data-aos="fade-left" data-aos-duration="1000" id="slider-img1" *ngIf="counter==1" class="slider-img">
+             <div class="row h-100 align-items-center">
+              <div class="col-sm-12 col-md-9 col-lg-8 title-section">
+                <div class="hero-text-panel">
+                  <h1 data-aos="fade-right" data-aos-duration="500" class="text-uppercase landing-title">
+                    We are expertised in Detailing, Fabrication and Erection of Structural Steel
+                  </h1>
+                </div>
+              </div>
+              <div class="col-sm-0 col-md-3 col-lg-4"></div>
+             </div>
+           </div>
+
+           <div data-aos="fade-left" data-aos-duration="1000" id="slider-img2" *ngIf="counter==2" class="slider-img">
+            <div class="row h-100 align-items-center">
+              <div class="col-sm-12 col-md-9 col-lg-8 title-section">
+                <div class="hero-text-panel">
+                  <h1 data-aos="fade-right" data-aos-duration="500" class="text-uppercase landing-title">
+                    We are expertised in Detailing, Fabrication and Erection of Structural Steel
+                  </h1>
+                </div>
+              </div>
+              <div class="col-sm-0 col-md-3 col-lg-4"></div>
+            </div>
+          </div>
+
+          <div data-aos="fade-left" data-aos-duration="1000" id="slider-img3" *ngIf="counter==3" class="slider-img">
+            <div class="row h-100 align-items-center">
+              <div class="col-sm-12 col-md-9 col-lg-8 title-section">
+                <div class="hero-text-panel">
+                  <h1 data-aos="fade-right" data-aos-duration="500" class="text-uppercase landing-title">
+                    We are expertised in Detailing, Fabrication and Erection of Structural Steel
+                  </h1>
+                </div>
+              </div>
+              <div class="col-sm-0 col-md-3 col-lg-4"></div>
+            </div>
+          </div>
+
+          <div data-aos="fade-left" data-aos-duration="1000" id="slider-img4" *ngIf="counter==4" class="slider-img">
+            <div class="row h-100 align-items-center">
+              <div class="col-sm-12 col-md-9 col-lg-8 title-section">
+                <div class="hero-text-panel">
+                  <h1 data-aos="fade-right" data-aos-duration="500" class="text-uppercase landing-title">
+                    We are expertised in Detailing, Fabrication and Erection of Structural Steel
+                  </h1>
+                </div>
+              </div>
+              <div class="col-sm-0 col-md-3 col-lg-4"></div>
+            </div>
+          </div>
+
+          <div data-aos="fade-left" data-aos-duration="1000" id="slider-img5" *ngIf="counter==5" class="slider-img">
+            <div class="row h-100 align-items-center">
+              <div class="col-sm-12 col-md-9 col-lg-8 title-section">
+                <div class="hero-text-panel">
+                  <h1 data-aos="fade-right" data-aos-duration="500" class="text-uppercase landing-title">
+                    We are expertised in Detailing, Fabrication and Erection of Structural Steel
+                  </h1>
+                </div>
+              </div>
+              <div class="col-sm-0 col-md-3 col-lg-4"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+<header id="menu-bar">
+  <div class="container-fluid menu-bar-inner">
+    <div class="menu-bar-brand">
+      <div class="logo-revolve">
+        <img src="assets/images/mdImages/md_logo-removebg.png" width="56" alt="Metal Drafting" />
+      </div>
+      <h2 class="text-uppercase m-0 md-font">Metal Drafting Engineering Services</h2>
+    </div>
+
+    <button type="button" class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+      <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+
+    <nav class="md-nav" [class.menu-open]="menuOpen" aria-label="Primary">
+      <ul class="menu-list">
+        <li (click)="scroll('home')"><mat-icon>home</mat-icon>Home</li>
+        <li (click)="scroll('aboutus')"><mat-icon>info</mat-icon>About Us</li>
+        <li (click)="scroll('services')"><mat-icon>build</mat-icon>Our Services</li>
+        <li (click)="scroll('projects')"><mat-icon>layers</mat-icon>Softwares</li>
+        <li (click)="scroll('courses')"><mat-icon>school</mat-icon>Training</li>
+        <li (click)="scroll('contact')"><mat-icon>phone_in_talk</mat-icon>Contact Us</li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- <hr data-aos="fade-up" class="hr-divider"> -->
+
+<!-- About Us-->
+<section id="aboutus" data-aos="fade-right" class="container">
+  <div class="row">
+      <div class="col-sm-12 section-heading">
+          <h2 class="section-title">About Us</h2>
+          <span class="title-underline"></span>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-12">
+          <label class="section-desc">
+            Metal Drafting is a steel detailing group consisting of detailers and a project manager all dedicated to meeting and exceeding the 
+            detailing needs of our clients. In order to meet these needs, we use a combination of the latest technology coupled with the 
+            standards of the AISC,CISC and NISD in order to produce complete and precise drawings and details.
+          </label>
+
+          <label class="section-desc">
+            We specialize in all aspects of steel detailing with our core strengths being  Buildings ,Structural Steel and Hybrid Structures. 
+            We will also detail your miscellaneous steel, embedded steel, and anchor bolts.
+          </label>
+
+          <label class="section-desc">
+            We strive to be a high quality, dependable team striving to go above and beyond to ensure our customers meet their schedule demands, 
+            with cost effect.
+          </label>
+      </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section id="why-choose-us" class="why-choose-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 section-heading" data-aos="fade-up">
+        <h2 class="section-title">Why Choose Us?</h2>
+        <span class="title-underline"></span>
+      </div>
+    </div>
+    <div class="row why-choose-list">
+      <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+        <div class="why-choose-item">
+          <span class="why-choose-num">1</span>
+          <p>Expertise in steel detailing with over 20+ years of experience.</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-choose-item">
+          <span class="why-choose-num">2</span>
+          <p>Quality and Timely Project Delivery</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="why-choose-item">
+          <span class="why-choose-num">3</span>
+          <p>24x7 Dedicated Client support</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-choose-item">
+          <span class="why-choose-num">4</span>
+          <p>Well trained and Qualified workforce</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+        <div class="why-choose-item">
+          <span class="why-choose-num">5</span>
+          <p>Most Competitive Pricing</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="why-choose-item">
+          <span class="why-choose-num">6</span>
+          <p>High customer satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services-->
+<section id="services" data-aos="fade-right" class="services-section">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-12 section-heading">
+          <h2 class="section-title">Our Services</h2>
+          <span class="title-underline"></span>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-12">
+          <label class="section-desc">
+            Our customized steel detailing solutions is reperesntative  of our commitment to quality and best results.
+            The core focus here is quality drawings and designs for fabrication            
+          </label>
+      </div>
+  </div>
+
+  <div data-aos="fade-up" class="row">
+      <div class="col-sm-6">
+          <div class="content-box">
+              <i class="fa fa-building" aria-hidden="true"></i>
+              <h1>Structural Steel Detailing</h1>
+              <label>
+                Using Tekla Structures and SDS/2,we produce high quality shop and erection drawings for a wide range of steel structures. 
+                Because we employ the use of BIM (Building Information Modeling) tools for the 3D modeling and detailing of every project, 
+                we are able to gain a full understanding of the structure and avoid potential erection and field issues through 3D visualization. 
+              </label>
+          </div>
+      </div>
+      <div class="col-sm-6">
+          <div class="content-box">
+              <i class="fa fa-building" aria-hidden="true"></i>
+              <h1>Miscellaneous Steel</h1>
+              <label>
+                Metal Drafting team has experience in miscellaneous steel detailing and has detailed many staircases, ladders, hand rails, 
+                mezzanines, platforms and other miscellaneous structural elements. 
+                We coordinate closely with our clients to ensure that we adhere to their standards
+              </label>
+          </div>
+      </div>
+  </div>
+
+  <div data-aos="fade-up" class="row mt-5">
+      <div class="col-sm-6">
+          <div class="content-box">
+              <i class="fa fa-building" aria-hidden="true"></i>
+              <h1>CNC Capablilities</h1>
+              <label>
+                Tekla Structures and SDS/2 are programmed to generate a wide range of CNC files, in any of the formats commonly available 
+                in the industry. We can instantly generate .DWG, .DXF and other NC files for plates, 
+                and can produce CNC files for beam-lines and other automated fabrication lines.
+              </label>
+          </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="content-box">
+            <i class="fa fa-building" aria-hidden="true"></i>
+            <h1>Reports</h1>
+            <label>
+              We produce a wide range of electronic reports such as Shipping Lists, Advanced Bill of Materials, Bolts (Shop and Field) Summaries, 
+              Point to Point Field Bolt Lists and many more material management lists.
+            </label>
+        </div>
+    </div>
+  </div>
+  </div>
+ 
+
+</section>
+
+<hr data-aos="fade-up" class="hr-divider">
+
+<!-- Gallery/Projects-->
+<section id="projects" class="container">
+  <div data-aos="fade-right" class="row">
+    <div class="col-sm-12 section-heading">
+      <h2 class="section-title">Softwares</h2>
+      <span class="title-underline"></span>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-sm-3">
+      <div class="projects-div">
+        <img class="project-img" src="assets/images/mdImages/projects/p1.png" width="200">
+      </div>
+    </div>
+    <div class="col-sm-3">
+       <div class="projects-div">
+        <img class="project-img" src="assets/images/mdImages/projects/p2.png" width="200">
+      </div>
+    </div>
+    <div class="col-sm-3">
+       <div class="projects-div">
+        <img class="project-img" src="assets/images/mdImages/projects/p3.png" width="200">
+       </div>
+      
+    </div>
+    <div class="col-sm-3">
+       <div class="projects-div">
+        <img class="project-img" src="assets/images/mdImages/projects/p4.png" width="200">
+       </div>
+       
+    </div>
+  </div>
+  
+</section>
+
+<hr data-aos="fade-up" class="hr-divider">
+
+<!--Steel Courses-->
+<section id="courses" class="container">
+  <div data-aos="fade-right" class="row">
+    <div class="col-sm-12 section-heading">
+      <h2 class="section-title">Steel Courses</h2>
+      <span class="title-underline"></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <label class="section-desc">
+        You will learn fundamentals of detailing, basic connection design, interpretation of structural and
+        architectural drawings, welding symbols, preparation of anchor bolt plan, shop drawings and erection drawings.
+        This course will also cover theoretical and basic training in most advanced detailing software
+      </label>
+    </div>
+  </div>
+
+  <div class="row mt-5 text-center">
+    <table class="table text-left" id="steelcourses-table">
+      <tbody>
+        <tr>
+          <td data-aos="fade-right"><i class="fas fa-cog mr-2"></i>Basic Training</td>
+          <td data-aos="fade-left"><i class="fas fa-cog mr-2"></i>Introduction to Tekla Structures</td>
+        </tr>
+        <tr>
+          <td data-aos="fade-right"><i class="fas fa-cog mr-2"></i>Basic 3D Modeling</td>
+          <td data-aos="fade-left"><i class="fas fa-cog mr-2"></i>System Components</td>
+        </tr>
+        <tr>
+          <td data-aos="fade-right"><i class="fas fa-cog mr-2"></i>Interactive Modeling & Building Custom Components</td>
+          <td data-aos="fade-left"><i class="fas fa-cog mr-2"></i>Modeling Techniques</td>
+        </tr>
+        <tr>
+          <td data-aos="fade-right"><i class="fas fa-cog mr-2"></i>Structural Profiles and Materials</td>
+          <td data-aos="fade-left"><i class="fas fa-cog mr-2"></i>Numbering and reports</td>
+        </tr>
+        <tr>
+          <td data-aos="fade-right"><i class="fas fa-cog mr-2"></i>Principles of working with drawings</td>
+          <td data-aos="fade-left"><i class="fas fa-cog mr-2"></i>Creating General Arrangement Drawings</td>
+        </tr>
+        <tr>
+          <td data-aos="fade-right"><i class="fas fa-cog mr-2"></i>Creating Assembly Drawings</td>
+          <td data-aos="fade-left"><i class="fas fa-cog mr-2"></i>Creating Single Part Drawings</td>
+        </tr>
+        <tr>
+          <td data-aos="fade-right"><i class="fas fa-cog mr-2"></i>Creating Anchor Bolt Plans</td>
+          <td data-aos="fade-left"><i class="fas fa-cog mr-2"></i>Multi Drawings and multi numbering</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr data-aos="fade-up" class="hr-divider">
+
+<!-- Contact Us-->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 section-heading" data-aos="fade-up">
+        <h2 class="section-title">Contact Us</h2>
+        <span class="title-underline"></span>
+      </div>
+    </div>
+    <div class="row contact-row">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="contact-card">
+          <div class="contact-card__icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Chennai Office</h3>
+          <p>No 16, Second Floor, New Thandavarayan Street West, Purasawalkam,<br>Chennai - 600 007.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="contact-card">
+          <div class="contact-card__icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>US Office</h3>
+          <p>209 Huron Ave., Suite 4<br>Port Huron, MI 48060</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="contact-card">
+          <div class="contact-card__icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Canada Office</h3>
+          <p>946 Cathcart Blvd.<br>Sarnia, Ontario Canada N7V 2N9</p>
+        </div>
+      </div>
+    </div>
+    <div class="row contact-info-row" data-aos="fade-up" data-aos-delay="150">
+      <div class="col-sm-12 col-md-6 contact-info-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:info@metaldrafting.com">info@metaldrafting.com</a>
+      </div>
+      <div class="col-sm-12 col-md-6 contact-info-item">
+        <i class="fas fa-phone-alt"></i>
+        <a href="tel:+19294325545">+1 (929) 432 5545</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer-->
+<footer class="footer-section">
+  <div class="container">
+    <div class="row footer-row">
+      <div class="col-md-6 footer-brand">
+        <strong>Metal Drafting Engineering Services</strong> Private Limited
+      </div>
+      <div class="col-md-6 footer-credit text-md-right">
+        Developed with <i class="fas fa-heartbeat heart-pulse"></i> by R-Team Digital Solutions
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 footer-copy text-center">
+        &copy; {{currentYear}} All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
