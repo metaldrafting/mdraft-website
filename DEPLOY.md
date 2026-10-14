@@ -26,5 +26,7 @@ Open `http://localhost:4200`.
 
 ## Live URL
 
-- Project Pages: `https://metaldrafting.github.io/mdraft-website/`
-- Custom domain (if configured): `https://metaldrafting.com`
+- Custom domain: `https://metaldrafting.com`
+- (GitHub redirects `*.github.io` to the custom domain when configured)
+
+Build uses `base-href=/` because the custom domain serves from the site root.
