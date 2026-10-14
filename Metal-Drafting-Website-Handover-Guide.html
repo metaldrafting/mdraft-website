@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Metal Drafting Website — Client Handover Guide</title>
+  <style>
+    :root {
+      --navy: #2a365d;
+      --gold: #d59c33;
+      --cream: #f7ede3;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --code-bg: #0f172a;
+      --ok: #166534;
+      --warn: #92400e;
+      --danger: #991b1b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--navy), #1e293b);
+      color: #fff;
+      padding: 2.5rem 1.25rem;
+    }
+    header .wrap, main, footer .wrap { max-width: 920px; margin: 0 auto; }
+    header h1 { margin: 0 0 0.5rem; font-size: 1.85rem; }
+    header p { margin: 0.35rem 0; color: #cbd5e1; }
+    .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #1f2937;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+    main { padding: 2rem 1.25rem 3rem; }
+    h2 {
+      color: var(--navy);
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 0.35rem;
+      margin-top: 2.5rem;
+    }
+    h3 { color: var(--navy); margin-top: 1.75rem; }
+    a { color: #1d4ed8; }
+    .card {
+      background: var(--cream);
+      border: 1px solid #f0d9b5;
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      margin: 1rem 0;
+    }
+    .info { background: #eff6ff; border-color: #bfdbfe; }
+    .warn { background: #fffbeb; border-color: #fde68a; }
+    .danger { background: #fef2f2; border-color: #fecaca; }
+    .ok { background: #f0fdf4; border-color: #bbf7d0; }
+    .card strong { color: inherit; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.65rem 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f8fafc; }
+    code, kbd {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.9em;
+    }
+    kbd {
+      background: #f3f4f6;
+      border: 1px solid #d1d5db;
+      border-bottom-width: 2px;
+      border-radius: 4px;
+      padding: 0.05rem 0.35rem;
+    }
+    pre {
+      background: var(--code-bg);
+      color: #e2e8f0;
+      padding: 1rem 1.1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    pre code { color: inherit; font-size: inherit; }
+    ol.steps > li { margin: 0.55rem 0; }
+    .toc {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+    }
+    .toc ol { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+    footer {
+      background: var(--navy);
+      color: #cbd5e1;
+      padding: 1.25rem;
+      font-size: 0.9rem;
+    }
+    .print-note { color: var(--muted); font-size: 0.9rem; }
+    @media print {
+      header { padding: 1.25rem; }
+      .print-note { display: none; }
+      a { color: inherit; text-decoration: none; }
+      pre { white-space: pre-wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="badge">CLIENT HANDOVER GUIDE</div>
+      <h1>Metal Drafting Website</h1>
+      <p><strong>Repository:</strong> https://github.com/metaldrafting/mdraft-website</p>
+      <p><strong>Live website:</strong> https://metaldrafting.com</p>
+      <p><strong>Tech:</strong> Angular 20 · GitHub Pages · Custom domain</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="card info">
+      <strong>Purpose of this document:</strong>
+      From now on, your team will own updates to the Metal Drafting website.
+      This guide explains how to get the code, make changes, commit, push, and publish
+      updates to the live site.
+    </div>
+
+    <div class="toc">
+      <strong>Contents</strong>
+      <ol>
+        <li><a href="#overview">Project overview</a></li>
+        <li><a href="#prereq">What you need installed</a></li>
+        <li><a href="#access">GitHub access &amp; authentication</a></li>
+        <li><a href="#clone">Clone the repository (first time)</a></li>
+        <li><a href="#setup">Install dependencies &amp; run locally</a></li>
+        <li><a href="#edit">Make website changes</a></li>
+        <li><a href="#git">Git workflow: pull → change → commit → push</a></li>
+        <li><a href="#deploy">Deploy to the live website</a></li>
+        <li><a href="#pages">GitHub Pages settings (already configured)</a></li>
+        <li><a href="#structure">Important folders &amp; files</a></li>
+        <li><a href="#checklist">Everyday update checklist</a></li>
+        <li><a href="#troubleshoot">Troubleshooting</a></li>
+      </ol>
+    </div>
+
+    <h2 id="overview">1. Project overview</h2>
+    <p>
+      The website source code lives on the <code>main</code> branch.
+      The <strong>live public site</strong> is served from a separate branch called
+      <code>gh-pages</code> (built production files only).
+    </p>
+    <table>
+      <thead>
+        <tr><th>Item</th><th>Details</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Source branch</td>
+          <td><code>main</code> — all editable Angular source code</td>
+        </tr>
+        <tr>
+          <td>Deploy branch</td>
+          <td><code>gh-pages</code> — auto-generated build output for GitHub Pages</td>
+        </tr>
+        <tr>
+          <td>Live URL</td>
+          <td><a href="https://metaldrafting.com" target="_blank" rel="noopener">https://metaldrafting.com</a></td>
+        </tr>
+        <tr>
+          <td>GitHub repo</td>
+          <td><a href="https://github.com/metaldrafting/mdraft-website" target="_blank" rel="noopener">github.com/metaldrafting/mdraft-website</a></td>
+        </tr>
+        <tr>
+          <td>Local preview</td>
+          <td><code>http://localhost:4200</code> after running <code>npm start</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card warn">
+      <strong>Important:</strong> Do <em>not</em> manually edit files on the
+      <code>gh-pages</code> branch. Always edit source on <code>main</code>, then run the deploy script.
+    </div>
+
+    <h2 id="prereq">2. What you need installed</h2>
+    <p>Install these once on the computer that will maintain the website:</p>
+    <ol class="steps">
+      <li>
+        <strong>Git</strong> — <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a>
+      </li>
+      <li>
+        <strong>Node.js LTS (v20 or newer recommended)</strong> —
+        <a href="https://nodejs.org/" target="_blank" rel="noopener">https://nodejs.org/</a>
+        <br />This also installs <code>npm</code>.
+      </li>
+      <li>
+        <strong>A code editor</strong> (recommended: VS Code / Cursor)
+      </li>
+      <li>
+        <strong>Access to the GitHub account</strong> that owns
+        <code>metaldrafting/mdraft-website</code> (or a collaborator account with write access)
+      </li>
+    </ol>
+    <p>Verify installation in Terminal / Command Prompt:</p>
+    <pre><code>git --version
+node --version
+npm --version</code></pre>
+
+    <h2 id="access">3. GitHub access &amp; authentication</h2>
+    <p>
+      GitHub no longer accepts your normal account password for Git push/pull over HTTPS.
+      You must use a <strong>Personal Access Token (PAT)</strong>.
+    </p>
+
+    <h3>3.1 Create a Personal Access Token</h3>
+    <ol class="steps">
+      <li>Sign in to GitHub as the account that can write to this repository.</li>
+      <li>Go to <strong>Settings → Developer settings → Personal access tokens</strong>.</li>
+      <li>
+        Prefer a <strong>Fine-grained token</strong>:
+        <ul>
+          <li>Resource owner: <code>metaldrafting</code></li>
+          <li>Repository access: only <code>mdraft-website</code></li>
+          <li><strong>Permissions → Contents: Read and write</strong> (required for push/deploy)</li>
+          <li>Metadata: Read-only</li>
+        </ul>
+      </li>
+      <li>Generate the token and <strong>copy it immediately</strong> (shown only once).</li>
+    </ol>
+    <div class="card danger">
+      <strong>Security:</strong> Treat the token like a password. Do not paste it into chat,
+      email, or commit it into the repository.
+    </div>
+
+    <h3>3.2 When Git asks for credentials</h3>
+    <ul>
+      <li><strong>Username:</strong> your GitHub username (e.g. <code>metaldrafting</code>)</li>
+      <li><strong>Password:</strong> paste the <strong>PAT</strong> (not your GitHub login password)</li>
+    </ul>
+    <p>On macOS, credentials are usually saved in Keychain after the first successful login.</p>
+
+    <h2 id="clone">4. Clone the repository (first time)</h2>
+    <p>Open Terminal, go to the folder where you want the project, then run:</p>
+    <pre><code>cd ~/Documents
+git clone https://github.com/metaldrafting/mdraft-website.git
+cd mdraft-website</code></pre>
+    <p>If authentication is required, use the username + PAT as described above.</p>
+    <div class="card info">
+      After cloning, you should see files like <code>package.json</code>, <code>angular.json</code>,
+      <code>src/</code>, and <code>deploy-gh-pages.sh</code>.
+    </div>
+
+    <h2 id="setup">5. Install dependencies &amp; run locally</h2>
+    <p>Always run these commands from the project root (the folder that contains <code>package.json</code>).</p>
+    <pre><code># Install packages (first time, or after package.json changes)
+npm install
+
+# Start local development server
+npm start</code></pre>
+    <p>
+      Browser should open <code>http://localhost:4200</code>.
+      Leave this running while you edit; the page refreshes when you save files.
+    </p>
+    <p>Optional — share the local preview on your Wi‑Fi network (phones/other PCs):</p>
+    <pre><code>npm run start:lan</code></pre>
+    <p>Then open the Network URL shown in the terminal (example: <code>http://192.168.x.x:4200</code>).</p>
+    <p>Stop the server with <kbd>Ctrl</kbd> + <kbd>C</kbd>.</p>
+
+    <h2 id="edit">6. Make website changes</h2>
+    <p>Most content/layout changes are under <code>src/app/</code>.</p>
+    <table>
+      <thead>
+        <tr><th>What you want to change</th><th>Where to look</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Home page sections (About, Services, Projects, Courses, Contact, Footer)</td>
+          <td><code>src/app/pages/home/home.html</code></td>
+        </tr>
+        <tr>
+          <td>Home page styles</td>
+          <td><code>src/app/pages/home/home.scss</code></td>
+        </tr>
+        <tr>
+          <td>Images / logos</td>
+          <td><code>public/assets/images/</code></td>
+        </tr>
+        <tr>
+          <td>Global styles</td>
+          <td><code>src/styles.scss</code></td>
+        </tr>
+        <tr>
+          <td>Page title / meta</td>
+          <td><code>src/index.html</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card warn">
+      Preview every change locally with <code>npm start</code> before committing and deploying.
+    </div>
+
+    <h2 id="git">7. Git workflow: pull → change → commit → push</h2>
+    <p>Use this flow every time you update the site.</p>
+
+    <h3>Step A — Get the latest code</h3>
+    <pre><code>cd mdraft-website
+git checkout main
+git pull origin main</code></pre>
+
+    <h3>Step B — Make your edits</h3>
+    <p>Edit files in your editor, then check locally with <code>npm start</code>.</p>
+
+    <h3>Step C — See what changed</h3>
+    <pre><code>git status
+git diff</code></pre>
+
+    <h3>Step D — Stage and commit</h3>
+    <pre><code># Stage specific files
+git add src/app/pages/home/home.html src/app/pages/home/home.scss
+
+# Or stage everything modified (be careful)
+git add -A
+
+# Create a commit with a clear message
+git commit -m "Update contact address on home page"</code></pre>
+    <div class="card info">
+      Write short, clear commit messages describing <em>what</em> changed
+      (example: “Fix footer spacing”, “Update project images”).
+    </div>
+
+    <h3>Step E — Push source to GitHub</h3>
+    <pre><code>git push origin main</code></pre>
+    <p>
+      This uploads source code to GitHub.
+      <strong>It does not automatically update the live website.</strong>
+      You still need the deploy step below.
+    </p>
+
+    <h3>Useful Git commands</h3>
+    <pre><code># Current branch and changed files
+git status
+
+# Commit history
+git log --oneline -10
+
+# Undo unstaged local edits in one file (careful: discards changes)
+git checkout -- src/app/pages/home/home.html
+
+# Discard all uncommitted local changes (careful!)
+git reset --hard
+git clean -fd</code></pre>
+
+    <h2 id="deploy">8. Deploy to the live website</h2>
+    <p>
+      Deployment builds the production site and force-updates the
+      <code>gh-pages</code> branch. The deploy script also writes the custom domain
+      <code>CNAME</code> for <strong>metaldrafting.com</strong>.
+    </p>
+
+    <h3>Deploy command</h3>
+    <pre><code>cd mdraft-website
+
+# Make sure latest source is committed &amp; pushed first
+git status
+git push origin main
+
+# Build + publish to GitHub Pages
+./deploy-gh-pages.sh
+
+# Equivalent npm script:
+# npm run deploy</code></pre>
+
+    <p>What the script does:</p>
+    <ol class="steps">
+      <li>Builds Angular in production mode with <code>base-href=/</code> (needed for custom domain root)</li>
+      <li>Copies <code>index.html</code> to <code>404.html</code> (helps SPA routing on GitHub Pages)</li>
+      <li>Writes <code>CNAME</code> containing <code>metaldrafting.com</code></li>
+      <li>Pushes the built files to branch <code>gh-pages</code></li>
+    </ol>
+
+    <div class="card ok">
+      After a successful deploy, wait 1–2 minutes, then hard-refresh the live site:<br />
+      <a href="https://metaldrafting.com" target="_blank" rel="noopener">https://metaldrafting.com</a><br />
+      On Mac: <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> &nbsp;|&nbsp;
+      On Windows: <kbd>Ctrl</kbd> + <kbd>F5</kbd>
+    </div>
+
+    <div class="card warn">
+      On macOS/Linux, if the script is not executable, run once:<br />
+      <code>chmod +x deploy-gh-pages.sh</code>
+    </div>
+
+    <h2 id="pages">9. GitHub Pages settings (already configured)</h2>
+    <p>These should already be set. Check only if the live site stops working:</p>
+    <ol class="steps">
+      <li>Open <a href="https://github.com/metaldrafting/mdraft-website/settings/pages" target="_blank" rel="noopener">Repo → Settings → Pages</a></li>
+      <li><strong>Source:</strong> Deploy from a branch</li>
+      <li><strong>Branch:</strong> <code>gh-pages</code> / <code>/(root)</code></li>
+      <li><strong>Custom domain:</strong> <code>metaldrafting.com</code> (DNS check successful)</li>
+      <li><strong>Enforce HTTPS:</strong> enabled</li>
+    </ol>
+    <div class="card danger">
+      Do not change <code>base-href</code> to <code>/mdraft-website/</code> while using the custom domain
+      <code>metaldrafting.com</code>. Root domain requires <code>base-href=/</code>
+      (already handled by <code>deploy-gh-pages.sh</code>).
+    </div>
+
+    <h2 id="structure">10. Important folders &amp; files</h2>
+    <pre><code>mdraft-website/
+├── src/                         # Application source (edit here)
+│   ├── app/pages/home/          # Main website page
+│   ├── index.html
+│   └── styles.scss
+├── public/assets/images/        # Images used on the site
+├── deploy-gh-pages.sh           # Deploy script (build + push gh-pages)
+├── DEPLOY.md                    # Short deploy notes
+├── package.json                 # npm scripts &amp; dependencies
+├── angular.json                 # Angular project config
+└── dist/                        # Build output (generated, not edited)</code></pre>
+
+    <h2 id="checklist">11. Everyday update checklist</h2>
+    <div class="card">
+      <ol class="steps">
+        <li><code>git checkout main</code></li>
+        <li><code>git pull origin main</code></li>
+        <li>Edit files / replace images</li>
+        <li><code>npm start</code> → verify locally</li>
+        <li><code>git add ...</code></li>
+        <li><code>git commit -m "Describe your change"</code></li>
+        <li><code>git push origin main</code></li>
+        <li><code>./deploy-gh-pages.sh</code></li>
+        <li>Hard-refresh <a href="https://metaldrafting.com">https://metaldrafting.com</a> and verify</li>
+      </ol>
+    </div>
+
+    <h2 id="troubleshoot">12. Troubleshooting</h2>
+    <table>
+      <thead>
+        <tr><th>Problem</th><th>What to do</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>Invalid username or token</code> / password not supported</td>
+          <td>Use a Personal Access Token as the password. Create/regenerate PAT with Contents: Read and write.</td>
+        </tr>
+        <tr>
+          <td><code>Permission ... denied</code> / HTTP 403 on push</td>
+          <td>Token lacks write permission, or account is not a collaborator/owner. Fix PAT scopes or repo access.</td>
+        </tr>
+        <tr>
+          <td>Site blank / JS &amp; CSS 404 on live domain</td>
+          <td>Redeploy with <code>./deploy-gh-pages.sh</code> (must use <code>base-href=/</code> for custom domain). Hard-refresh browser.</td>
+        </tr>
+        <tr>
+          <td>Local site won’t start</td>
+          <td>Run <code>npm install</code> again. Confirm Node.js is installed. Check you are in the project root.</td>
+        </tr>
+        <tr>
+          <td>Changes pushed but live site unchanged</td>
+          <td>You pushed <code>main</code> only. Run deploy script to update <code>gh-pages</code>. Wait 1–2 minutes + hard refresh.</td>
+        </tr>
+        <tr>
+          <td>macOS: old credentials cached</td>
+          <td>Open Keychain Access → search <code>github.com</code> → delete old internet password entries → push again and enter new PAT.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Clear macOS cached GitHub credentials (optional)</h3>
+    <pre><code>printf "protocol=https\nhost=github.com\npath=metaldrafting/mdraft-website.git\nusername=metaldrafting\n\n" | git credential-osxkeychain erase</code></pre>
+    <p>Then run <code>git pull</code> or <code>git push</code> again and enter the new PAT when prompted.</p>
+
+    <h2>Quick command cheat sheet</h2>
+    <pre><code># First-time setup
+git clone https://github.com/metaldrafting/mdraft-website.git
+cd mdraft-website
+npm install
+npm start
+
+# Regular update + publish
+git checkout main
+git pull origin main
+# ... edit files ...
+git add -A
+git commit -m "Describe change"
+git push origin main
+./deploy-gh-pages.sh</code></pre>
+
+    <div class="card ok">
+      <strong>Support tip:</strong> Keep this HTML file outside the repository (or in shared company docs).
+      It is a handover document for people, not part of the website build.
+    </div>
+
+    <p class="print-note">Tip: open this file in a browser and use Print → Save as PDF if you want a PDF copy.</p>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Metal Drafting Engineering Services Private Limited · Website handover guide<br />
+      Repo: github.com/metaldrafting/mdraft-website · Live: metaldrafting.com
+    </div>
+  </footer>
+</body>
+</html>
