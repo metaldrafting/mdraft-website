@@ -479,12 +479,38 @@ ul.menu-list mat-icon {
   background: #2A365D;
   color: #cbd5e0;
   .footer-row { margin-bottom: 12px; }
-  .footer-brand { color: #e2e8f0; font-size: 0.95rem; }
-  .footer-credit { font-size: 0.9rem; color: #94a3b8; }
+  .footer-brand {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+  }
+  .footer-credit {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .footer-credit-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    white-space: nowrap;
+  }
   .footer-copy { font-size: 0.85rem; color: #94a3b8; }
   a { color: #cbd5e0; }
 }
 .heart-pulse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 0.95em;
+  vertical-align: middle;
+  transform-origin: center center;
   animation: heartPulse 1.2s ease-in-out infinite;
   color: #f87171 !important;
 }
@@ -648,7 +674,11 @@ ul.menu-list mat-icon {
   }
 
   .footer-credit {
-    text-align: left !important;
+    justify-content: flex-start;
     margin-top: 0.5rem;
+  }
+
+  .footer-credit-line {
+    white-space: normal;
   }
 }
