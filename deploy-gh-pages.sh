@@ -21,7 +21,7 @@ REPO_URL="$(git -C "$REPO_ROOT" remote get-url origin)"
 
 echo "Building Angular app for production (base-href=$BASE_HREF)..."
 if [[ -n "$MSYSTEM" ]]; then
-  cmd.exe /d /c "npx ng build --configuration production --base-href=/"
+  MSYS_NO_PATHCONV=1 cmd.exe /d /c "npx ng build --configuration production --base-href=/"
 else
   npx ng build --configuration production --base-href "$BASE_HREF"
 fi
