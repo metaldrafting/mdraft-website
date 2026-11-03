@@ -20,7 +20,7 @@ fi
 REPO_URL="$(git -C "$REPO_ROOT" remote get-url origin)"
 
 echo "Building Angular app for production (base-href=$BASE_HREF)..."
-npx ng build --configuration production --base-href "$BASE_HREF"
+npx ng build --configuration production --base-href=/
 
 if [ ! -f "$OUT_DIR/index.html" ]; then
   echo "Error: Build output not found at $OUT_DIR/index.html"
